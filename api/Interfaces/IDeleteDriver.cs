@@ -4,7 +4,7 @@ namespace api.Interfaces
 {
     public interface IDeleteDriver
     {
-        public void DeleteDriver(int Id);
+        public void DropDriver(int id);
         
     }
 }

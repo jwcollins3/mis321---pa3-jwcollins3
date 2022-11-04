@@ -44,11 +44,12 @@ namespace api.Controllers
 
         // PUT: api/Driver/5
         [EnableCors("AnotherPolicy")]
-        [HttpPut]
-        public void Put([FromBody] Driver value)
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] Driver value)
         {
             IUpdateDriver updateObject = new UpdateDriver();
-            updateObject.UpdateDriverRating(value);
+            updateObject.UpdateDriverRating(id, value);
+            value.Id = id;
             Console.WriteLine(value.Id);
             Console.WriteLine(value.Rating);
         }
@@ -57,6 +58,8 @@ namespace api.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            IDeleteDriver deleteObject = new DeleteDriver();
+            deleteObject.DropDriver(id);
         }
     }
 }

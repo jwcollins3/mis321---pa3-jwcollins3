@@ -4,6 +4,6 @@ namespace api.Interfaces
 {
     public interface IUpdateDriver
     {
-        public void UpdateDriverRating(Driver value);
+        public void UpdateDriverRating(int id, Driver value);
     }
 }
