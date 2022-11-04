@@ -17,12 +17,8 @@ namespace api.Database
 
             cmd.Parameters.AddWithValue("@driver_id", value.Id);
             cmd.Parameters.AddWithValue("@driver_rating", value.Rating);
-            // cmd.Prepare();
+            cmd.Prepare();
             cmd.ExecuteNonQuery();
-            con.Close();
         } 
-
-
-
     }
 }

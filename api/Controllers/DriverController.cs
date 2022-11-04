@@ -23,7 +23,6 @@ namespace api.Controllers
             IGetAllDrivers readObject = new ReadDriverData();
             return readObject.GetAllDrivers();
 
-            // return readObject.GetAllDrivers();
         }
 
         // GET: api/Driver/5
@@ -45,13 +44,13 @@ namespace api.Controllers
 
         // PUT: api/Driver/5
         [EnableCors("AnotherPolicy")]
-        [HttpPut("{id}")]
+        [HttpPut]
         public void Put([FromBody] Driver value)
         {
             IUpdateDriver updateObject = new UpdateDriver();
             updateObject.UpdateDriverRating(value);
-            // Console.WriteLine(id);
-            // Console.WriteLine(value.Rating);
+            Console.WriteLine(value.Id);
+            Console.WriteLine(value.Rating);
         }
 
         // DELETE: api/Driver/5
